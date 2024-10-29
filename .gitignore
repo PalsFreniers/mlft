@@ -5,3 +5,7 @@
 .*.nfs*
 *.suprapack
 compile_commands.json
+build/OBJ
+build/DEPS
+build/usr/includes
+build/usr/lib
