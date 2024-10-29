@@ -1,0 +1,11 @@
+name: mlft
+version: 1.0.0
+author: PalsFreniers
+binary: 
+description: Mega Lib Fourty Two
+dependency: 
+arch: amd64-Linux
+exclude_package: 
+optional_dependency: 
+size_tar: 
+size_installed: 27784
