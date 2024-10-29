@@ -25,7 +25,7 @@ SONAME = $(BUILDIDR)$(NAME).so
 ANAME = $(BUILDIDR)$(NAME).a
 HEADERNAME = $(INCDIR)$(NAME).h
 
-all: dynamic static test
+all: dynamic static
 
 -include $(DEPS)
 
