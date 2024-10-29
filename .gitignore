@@ -1,0 +1,7 @@
+*.o
+*.a
+*.so
+.*.swp
+.*.nfs*
+*.suprapack
+compile_commands.json

@@ -1,0 +1,19 @@
+objects:
+        strings;
+        files;
+        circular_arrays;
+        threads;
+
+allocators:
+        arena;
+        linked_arenas;
+        block;
+
+functionalities:
+        syscall_wrappers;
+        dynamic_libraries injection;
+        graphic library;
+        terminal graphic system;
+
+///////// prefix everything with ft_
+///////// function that should not be used by anything else than the lib will be static (except normature functions)
