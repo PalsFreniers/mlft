@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 11:55:28 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/30 12:17:20 by tdelage          ###   ########.fr       */
+/*   Updated: 2024/10/30 15:40:35 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,5 @@ void	block_free(t_ptr block)
 			break ;
 		tmp = (t_ptr)tmp + sizeof(t_block_header) + tmp->len;
 	}
-	if (header->len > BLOCK_ALLOCATOR_BLOCKS_NUMBER / 2)
-		block_arena_free_empty();
+	block_arena_free_empty();
 }
