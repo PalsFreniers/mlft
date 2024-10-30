@@ -10,13 +10,37 @@ SRCS := system/calls/ft_read.c    \
 	system/calls/ft_munmap.c  \
 	system/calls/ft_syscall.c
 SRCS += errno/ft_errno.c
-SRCS += allocators/arena/new.c \
-	allocators/arena/free.c \
-	allocators/arena/empty.c \
-	allocators/arena/malloc.c \
-	allocators/arena/calloc.c \
-	allocators/arena/get_suitable.c
-SRCS += memory/bzero.c
+SRCS += allocators/arena/new.c           \
+	allocators/arena/free.c          \
+	allocators/arena/empty.c         \
+	allocators/arena/malloc.c        \
+	allocators/arena/calloc.c        \
+	allocators/arena/get_suitable.c  \
+	allocators/arena/get_allocator.c
+SRCS += allocators/block/free.c           \
+	allocators/block/copy.c           \
+	allocators/block/arena.c          \
+	allocators/block/calloc.c         \
+	allocators/block/malloc.c         \
+	allocators/block/resize.c         \
+	allocators/block/divide.c         \
+	allocators/block/get_size.c       \
+	allocators/block/get_allocator.c  \
+	allocators/block/get_first_free.c
+SRCS += memory/bzero.c  \
+	memory/memcpy.c \
+	memory/memset.c \
+	memory/memmove.c
+SRCS += ascii/ft_is_ascii.c \
+	ascii/ft_is_print.c \
+	ascii/ft_is_alnum.c \
+	ascii/ft_is_alpha.c \
+	ascii/ft_is_digit.c \
+	ascii/ft_is_space.c \
+	ascii/ft_is_lower.c \
+	ascii/ft_is_upper.c \
+	ascii/ft_to_lower.c \
+	ascii/ft_to_upper.c
 OBJS := $(addprefix $(OBJDIR),$(SRCS:.c=.o))
 DEPS := $(addprefix $(DEPSDIR),$(SRCS:.c=.d))
 

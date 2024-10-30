@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memory.h                                           :+:      :+:    :+:   */
+/*   get_allocator.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 07:18:49 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/30 07:03:01 by tdelage          ###   ########.fr       */
+/*   Created: 2024/10/30 08:29:38 by tdelage           #+#    #+#             */
+/*   Updated: 2024/10/30 08:32:17 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEMORY_H
-# define MEMORY_H
+#include <libft.h>
 
-# include <types.h>
+t_allocator	block_get_allocator(void)
+{
+	t_allocator	ret;
 
-t_ptr	ft_bzero(t_ptr ptr, t_size size);
-t_ptr	ft_memset(t_ptr ptr, t_size len, t_u8 val);
-t_ptr	ft_memcpy(t_ptr dest, t_ptr src, t_size len);
-t_ptr	ft_memmove(t_ptr dest, t_ptr src, t_size len);
-
-#endif // MEMORY_H
+	ret.instance = NULL;
+	ret.malloc = (t_allocator_malloc) & block_malloc;
+	ret.calloc = (t_allocator_calloc) & block_calloc;
+	ret.resize = (t_allocator_resize) & block_resize;
+	ret.free = (t_allocator_free) & block_free;
+	return (ret);
+}

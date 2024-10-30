@@ -5,7 +5,6 @@ objects:
         threads;
 
 allocators:
-        arena;
         linked_arenas;
         block;
 
@@ -15,5 +14,4 @@ functionalities:
         graphic library;
         terminal graphic system;
 
-///////// prefix everything with ft_
 ///////// function that should not be used by anything else than the lib will be static (except normature functions)

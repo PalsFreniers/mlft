@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 07:22:15 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/29 07:45:24 by tdelage          ###   ########.fr       */
+/*   Updated: 2024/10/30 05:46:47 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 t_ptr	ft_bzero(t_ptr ptr, t_size size)
 {
-	int	i;
-	int	x;
+	t_size	i;
+	t_size	x;
 
 	i = 0;
-	while (i < (int)size % 8)
+	while (i < size % 8)
 		((t_u8 *)ptr)[i++] = 0;
 	x = 0;
-	while (x < (int)size / 8)
-		((t_u64 *)ptr + i)[x++] = 0;
+	while (x < size / 8)
+		((t_u64 *)((t_u8 *)ptr + i))[x++] = 0;
 	return (ptr);
 }

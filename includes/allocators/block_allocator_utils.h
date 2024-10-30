@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   block_allocator_utils.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 08:52:06 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/30 07:43:32 by tdelage          ###   ########.fr       */
+/*   Created: 2024/10/30 09:02:07 by tdelage           #+#    #+#             */
+/*   Updated: 2024/10/30 12:41:25 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef BLOCK_ALLOCATOR_UTILS_H
+# define BLOCK_ALLOCATOR_UTILS_H
 
-// C compiler STD values
-# include <stddef.h>
-
-// libft headers
 # include <allocators/arena_allocator.h>
-# include <allocators/block_allocator.h>
-# include <errno/errno.h>
-# include <ft_ascii.h>
-# include <memory.h>
-# include <system/calls/syscalls.h>
 # include <types.h>
 
-#endif // LIBFT_H
+# define BLOCK_ALLOCATOR_BLOCKS_NUMBER 1000000
 
-// list of authorised includes:
-//      - stddef;
-//      - stdint;
-//      - stdbool;
-//      - stdargs;
+typedef struct s_block_header
+{
+	t_size		len;
+	bool		free;
+	bool		next_init;
+}				t_block_header;
+
+t_block_header	*block_get_first_free(t_size size);
+t_arena			*block_arena_static_storage(void);
+t_block_header	*block_divide(t_block_header *header, t_size size);
+
+#endif // BLOCK_ALLOCATOR_UTILS_H

@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 06:57:49 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/29 07:16:32 by tdelage          ###   ########.fr       */
+/*   Updated: 2024/10/30 10:25:42 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static bool	has_capacity(t_arena *arena, t_size size)
 t_arena	*arena_get_suitable(t_arena *arena, t_size size)
 {
 	t_arena	*last;
+	t_size	len;
 
 	while (arena && !has_capacity(arena, size))
 	{
@@ -28,7 +29,10 @@ t_arena	*arena_get_suitable(t_arena *arena, t_size size)
 	}
 	if (!arena)
 	{
-		arena = arena_new(size);
+		len = last->len;
+		if (size > len)
+			len = size;
+		arena = arena_new(len);
 		last->next = arena;
 	}
 	return (arena);

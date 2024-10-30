@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memory.h                                           :+:      :+:    :+:   */
+/*   ft_ascii.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 07:18:49 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/30 07:03:01 by tdelage          ###   ########.fr       */
+/*   Created: 2024/10/30 07:29:03 by tdelage           #+#    #+#             */
+/*   Updated: 2024/10/30 07:34:42 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEMORY_H
-# define MEMORY_H
+#ifndef FT_ASCII_H
+# define FT_ASCII_H
 
-# include <types.h>
+# include <stdbool.h>
 
-t_ptr	ft_bzero(t_ptr ptr, t_size size);
-t_ptr	ft_memset(t_ptr ptr, t_size len, t_u8 val);
-t_ptr	ft_memcpy(t_ptr dest, t_ptr src, t_size len);
-t_ptr	ft_memmove(t_ptr dest, t_ptr src, t_size len);
+bool	ft_is_ascii(char c);
+bool	ft_is_print(char c);
+bool	ft_is_alnum(char c);
+bool	ft_is_alpha(char c);
+bool	ft_is_digit(char c);
+bool	ft_is_space(char c);
+bool	ft_is_lower(char c);
+bool	ft_is_upper(char c);
 
-#endif // MEMORY_H
+char	ft_to_lower(char c);
+char	ft_to_upper(char c);
+
+#endif // FT_ASCII_H

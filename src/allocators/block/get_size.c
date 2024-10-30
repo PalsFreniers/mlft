@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memory.h                                           :+:      :+:    :+:   */
+/*   get_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 07:18:49 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/30 07:03:01 by tdelage          ###   ########.fr       */
+/*   Created: 2024/10/30 12:23:12 by tdelage           #+#    #+#             */
+/*   Updated: 2024/10/30 12:24:25 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEMORY_H
-# define MEMORY_H
+#include <allocators/block_allocator_utils.h>
+#include <libft.h>
 
-# include <types.h>
+t_size	block_get_size(t_ptr block)
+{
+	t_block_header	*header;
 
-t_ptr	ft_bzero(t_ptr ptr, t_size size);
-t_ptr	ft_memset(t_ptr ptr, t_size len, t_u8 val);
-t_ptr	ft_memcpy(t_ptr dest, t_ptr src, t_size len);
-t_ptr	ft_memmove(t_ptr dest, t_ptr src, t_size len);
-
-#endif // MEMORY_H
+	header = block - sizeof(t_block_header);
+	return (header->len);
+}

@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memory.h                                           :+:      :+:    :+:   */
+/*   ft_is_upper.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 07:18:49 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/30 07:03:01 by tdelage          ###   ########.fr       */
+/*   Created: 2024/10/30 07:52:30 by tdelage           #+#    #+#             */
+/*   Updated: 2024/10/30 07:53:24 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MEMORY_H
-# define MEMORY_H
+#include <libft.h>
 
-# include <types.h>
-
-t_ptr	ft_bzero(t_ptr ptr, t_size size);
-t_ptr	ft_memset(t_ptr ptr, t_size len, t_u8 val);
-t_ptr	ft_memcpy(t_ptr dest, t_ptr src, t_size len);
-t_ptr	ft_memmove(t_ptr dest, t_ptr src, t_size len);
-
-#endif // MEMORY_H
+bool	ft_is_upper(char c)
+{
+	return (c >= 'A' && c <= 'Z');
+}
