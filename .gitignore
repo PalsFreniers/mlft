@@ -4,6 +4,8 @@
 .*.swp
 .*.nfs*
 *.suprapack
+.*
+!.gitignore
 compile_commands.json
 build/OBJ
 build/DEPS

@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 08:52:06 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/30 07:43:32 by tdelage          ###   ########.fr       */
+/*   Updated: 2024/10/31 15:38:13 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include <allocators/block_allocator.h>
 # include <errno/errno.h>
 # include <ft_ascii.h>
+# include <ft_cstr.h>
+# include <io/files.h>
 # include <memory.h>
 # include <system/calls/syscalls.h>
 # include <types.h>

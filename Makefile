@@ -41,6 +41,13 @@ SRCS += ascii/ft_is_ascii.c \
 	ascii/ft_is_upper.c \
 	ascii/ft_to_lower.c \
 	ascii/ft_to_upper.c
+SRCS += cstr/ft_cstrlen.c \
+	cstr/ft_cstrchr.c \
+	cstr/ft_cstrclen.c \
+	cstr/ft_cstrrchr.c \
+	cstr/ft_cstrschr.c \
+	cstr/ft_cstrrschr.c
+SRCS += io/files/open.c
 OBJS := $(addprefix $(OBJDIR),$(SRCS:.c=.o))
 DEPS := $(addprefix $(DEPSDIR),$(SRCS:.c=.d))
 
@@ -58,19 +65,19 @@ dynamic: $(SONAME)
 static: $(ANAME)
 
 $(OBJDIR)%.o: $(SRCSDIR)%.c
-	@norminette $< > /dev/null
+	@norminette $< | grep "Error" > /dev/stderr | norminette $< > /dev/null
 	@printf "$(BLUE)$(BOLD)[NRM] $(RESET)=> file $<: OK!\n$(BOLD)[CMP] $(RESET)=> compiling file $< and generating dependecies\n"
 	@mkdir -p $(dir $@) $(dir $(DEPSDIR)$(patsubst %.c,%.d,$<))
 	@$(CC) -o $@ -c $(CFLAGS) $(DFLAGS) $<
 	@touch $(DEPSDIR)$(patsubst %.c,%.d,$<)
 
 $(SONAME): $(OBJS)
-	@norminette > /dev/null
+	@norminette | grep "Error" > /dev/stderr | norminette > /dev/null
 	@printf "$(GREEN)$(BOLD)[LNK] $(RESET)=> linking $(SONAME) dynamic lib\n"
 	@$(LD) -shared -o $(SONAME) $(OBJS) $(LDFLAGS)
 
 $(ANAME): $(OBJS)
-	@norminette > /dev/null
+	@norminette | grep "Error" > /dev/stderr | norminette > /dev/null
 	@printf "$(MAGENTA)$(BOLD)[PKG] $(RESET)=> packing $(ANAME) static lib\n"
 	@$(AR) $(ARFLAGS) -o $(ANAME) $(OBJS)
 

@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 09:02:25 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/29 07:31:29 by tdelage          ###   ########.fr       */
+/*   Updated: 2024/10/31 16:57:54 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef enum e_errno
 	ERRNO_NULL_BUFFER = -3,
 	ERRNO_ZERO_CAPACITY = -4,
 	ERRNO_ALLOC_OVERSIZE = -5,
+	ERRNO_FILE_FLAGS_UNKNOWN = -6,
 }		t_errno;
 
 t_errno	ft_errno(bool set, t_errno value);
