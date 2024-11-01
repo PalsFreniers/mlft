@@ -47,7 +47,14 @@ SRCS += cstr/ft_cstrlen.c \
 	cstr/ft_cstrrchr.c \
 	cstr/ft_cstrschr.c \
 	cstr/ft_cstrrschr.c
-SRCS += io/files/open.c
+SRCS += io/files/open.c \
+	io/files/read.c \
+	io/files/write.c \
+	io/files/close.c \
+	io/files/to_stream.c
+SRCS += io/stream/end.c \
+	io/stream/read.c \
+	io/stream/write.c
 OBJS := $(addprefix $(OBJDIR),$(SRCS:.c=.o))
 DEPS := $(addprefix $(DEPSDIR),$(SRCS:.c=.d))
 

@@ -6,13 +6,14 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 16:27:55 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/31 16:22:18 by tdelage          ###   ########.fr       */
+/*   Updated: 2024/11/01 15:20:07 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILES_H
 # define FILES_H
 
+# include <io/streams.h>
 # include <stdarg.h>
 # include <types.h>
 
@@ -26,11 +27,9 @@ typedef enum e_std_files
 }				t_std_files;
 
 t_file			file_open(t_cstr path, t_cstr flags);
-void			file_write(t_file file, t_ptr buffer, t_size len);
-void			file_read(t_file file, t_ptr buffer, t_size len);
+t_size			file_write(t_file file, t_ptr buffer, t_size len);
+t_size			file_read(t_file file, t_ptr buffer, t_size len);
 void			file_close(t_file file);
-
-void			file_printf(t_file, t_cstr fmt, ...);
-void			file_vprintf(t_file, t_cstr fmt, va_list lst);
+t_stream		file_to_stream(t_file *f);
 
 #endif // FILES_H
