@@ -6,7 +6,7 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 14:54:45 by tdelage           #+#    #+#             */
-/*   Updated: 2024/11/01 15:11:05 by tdelage          ###   ########.fr       */
+/*   Updated: 2024/11/01 15:35:14 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ typedef struct s_stream
 t_size				stream_read(t_stream *stream, t_ptr buffer, t_size len);
 t_size				stream_write(t_stream *stream, t_ptr buffer, t_size len);
 void				stream_end(t_stream *stream);
+t_u8				stream_get_byte(t_stream *stream);
+void				stream_send_byte(t_stream *stream, t_u8 byte);
 
 #endif // STREAMS_H

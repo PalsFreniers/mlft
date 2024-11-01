@@ -54,7 +54,9 @@ SRCS += io/files/open.c \
 	io/files/to_stream.c
 SRCS += io/stream/end.c \
 	io/stream/read.c \
-	io/stream/write.c
+	io/stream/write.c \
+	io/stream/get_byte.c \
+	io/stream/send_byte.c
 OBJS := $(addprefix $(OBJDIR),$(SRCS:.c=.o))
 DEPS := $(addprefix $(DEPSDIR),$(SRCS:.c=.d))
 
