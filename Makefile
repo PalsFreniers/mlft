@@ -60,7 +60,9 @@ SRCS += io/stream/end.c \
 	io/stream/read.c \
 	io/stream/write.c \
 	io/stream/get_byte.c \
-	io/stream/send_byte.c
+	io/stream/send_byte.c \
+	io/stream/ft_printf.c \
+	io/stream/ft_vprintf.c
 SRCS += strings/new.c \
 	strings/zero.c \
 	strings/copy.c \
