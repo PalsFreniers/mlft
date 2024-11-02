@@ -27,6 +27,10 @@ SRCS += allocators/block/free.c           \
 	allocators/block/get_size.c       \
 	allocators/block/get_allocator.c  \
 	allocators/block/get_first_free.c
+SRCS += allocators/allocator/free.c \
+	allocators/allocator/calloc.c \
+	allocators/allocator/malloc.c \
+	allocators/allocator/resize.c
 SRCS += memory/bzero.c  \
 	memory/memcpy.c \
 	memory/memset.c \
@@ -60,10 +64,13 @@ SRCS += io/stream/end.c \
 SRCS += strings/new.c \
 	strings/zero.c \
 	strings/copy.c \
+	strings/find.c \
 	strings/new_u.c \
 	strings/equal.c \
 	strings/erase.c \
 	strings/errno.c \
+	strings/split.c \
+	strings/substr.c \
 	strings/resize.c \
 	strings/append.c \
 	strings/to_cstr.c \

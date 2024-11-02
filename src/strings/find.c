@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   erase.c                                            :+:      :+:    :+:   */
+/*   find.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 19:07:10 by tdelage           #+#    #+#             */
-/*   Updated: 2024/11/02 20:55:23 by tdelage          ###   ########.fr       */
+/*   Created: 2024/11/02 20:36:39 by tdelage           #+#    #+#             */
+/*   Updated: 2024/11/02 20:50:03 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory.h"
 #include <libft.h>
 
-void	string_erase(t_string *str, t_size start, t_size len)
+t_isize	string_find(t_string str, t_string other)
 {
-	if (start > str->len)
-		return ;
-	if (start + len > str->len)
-		len = str->len - start;
-	if (len <= 0)
-		return ((void)string_errno(true, STRING_BAD_OFFSET));
-	ft_memmove(str->ptr + start, str->ptr + start + len, len);
-	str->len -= len;
+	t_isize	i;
+
+	i = 0;
+	if (other.len > str.len)
+		return (-1);
+	if (string_equal(str, other))
+		return (0);
+	while (i <= (t_isize)str.len - (t_isize)other.len)
+	{
+		if (string_equal(string_new_u(str.ptr + i, other.len), other))
+			return (i);
+		i++;
+	}
+	return (-1);
 }

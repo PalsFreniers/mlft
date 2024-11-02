@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   erase.c                                            :+:      :+:    :+:   */
+/*   ft_threads.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 19:07:10 by tdelage           #+#    #+#             */
-/*   Updated: 2024/11/02 20:55:23 by tdelage          ###   ########.fr       */
+/*   Created: 2024/11/02 21:50:30 by tdelage           #+#    #+#             */
+/*   Updated: 2024/11/02 21:51:04 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "memory.h"
-#include <libft.h>
+#ifndef FT_THREADS_H
+#define FT_THREADS_H
 
-void	string_erase(t_string *str, t_size start, t_size len)
-{
-	if (start > str->len)
-		return ;
-	if (start + len > str->len)
-		len = str->len - start;
-	if (len <= 0)
-		return ((void)string_errno(true, STRING_BAD_OFFSET));
-	ft_memmove(str->ptr + start, str->ptr + start + len, len);
-	str->len -= len;
-}
+
+
+#endif // FT_THREADS_H
