@@ -57,6 +57,21 @@ SRCS += io/stream/end.c \
 	io/stream/write.c \
 	io/stream/get_byte.c \
 	io/stream/send_byte.c
+SRCS += strings/new.c \
+	strings/zero.c \
+	strings/copy.c \
+	strings/new_u.c \
+	strings/equal.c \
+	strings/erase.c \
+	strings/errno.c \
+	strings/resize.c \
+	strings/append.c \
+	strings/to_cstr.c \
+	strings/new_cstr.c \
+	strings/size_equal.c \
+	strings/new_u_cstr.c \
+	strings/errno_to_cstr.c \
+	strings/new_with_capacity.c
 OBJS := $(addprefix $(OBJDIR),$(SRCS:.c=.o))
 DEPS := $(addprefix $(DEPSDIR),$(SRCS:.c=.d))
 

@@ -6,7 +6,7 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:45:25 by tdelage           #+#    #+#             */
-/*   Updated: 2024/11/01 16:04:12 by tdelage          ###   ########.fr       */
+/*   Updated: 2024/11/02 18:43:48 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 typedef enum e_strng_error
 {
 	STRING_SUCCESS,
+	STRING_ALLOC_ERROR,
+	STRING_NO_DESTROY_UNOWNED,
+	STRING_NO_MODIFY_UNOWNED,
 	STRING_ITERATOR_INVALID,
 	STRING_ITERATOR_OVERFLOW,
 	STRING_ITERATOR_UNDERFLOW,
@@ -30,6 +33,7 @@ typedef struct s_string
 {
 	t_cstr			ptr;
 	t_size			len;
+	t_size			capacity;
 	bool			unowned;
 }					t_string;
 
@@ -39,6 +43,8 @@ typedef struct s_string_iterator
 	t_size			off;
 }					t_string_iterator;
 
+t_string			string_zero(void);
+
 t_string			string_new_with_capacity(t_size capacity);
 t_string			string_new(t_cstr str, t_size len);
 t_string			string_new_u(t_cstr str, t_size len);
@@ -47,9 +53,9 @@ t_string			string_new_u_cstr(t_cstr str);
 
 void				string_destroy(t_string *str);
 
-t_string			str_copy(t_string str);
+t_string			string_copy(t_string str);
 
-t_cstr				str_to_cstr(t_string str);
+t_cstr				string_to_cstr(t_string str);
 
 void				string_append(t_string *str, t_string other);
 void				string_erase(t_string *str, t_size start, t_size len);

@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 08:52:06 by tdelage           #+#    #+#             */
-/*   Updated: 2024/11/01 15:12:24 by tdelage          ###   ########.fr       */
+/*   Updated: 2024/11/02 17:27:27 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <io/files.h>
 # include <io/streams.h>
 # include <memory.h>
+# include <string.h>
 # include <system/calls/syscalls.h>
 # include <types.h>
 
