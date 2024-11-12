@@ -6,13 +6,11 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:50:30 by tdelage           #+#    #+#             */
-/*   Updated: 2024/11/02 21:51:04 by tdelage          ###   ########.fr       */
+/*   Updated: 2024/11/05 19:12:55 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_THREADS_H
-#define FT_THREADS_H
-
-
+# define FT_THREADS_H
 
 #endif // FT_THREADS_H
