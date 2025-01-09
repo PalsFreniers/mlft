@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 14:57:56 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/27 16:05:04 by tdelage          ###   ########.fr       */
+/*   Updated: 2024/11/14 14:37:14 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef int64_t		t_i64;
 typedef uintptr_t	t_uptr;
 typedef intptr_t	t_iptr;
 typedef void		*t_ptr;
+
+typedef void		*t_any;
 
 typedef char		*t_cstr;
 
