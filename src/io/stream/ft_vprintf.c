@@ -6,21 +6,20 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 22:01:50 by tdelage           #+#    #+#             */
-/*   Updated: 2025/01/09 06:06:31 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/01/24 22:29:18 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "io/streams.h"
 #include <libft.h>
 
-void	ft_vprintf_stream_percent(t_stream *stream, const t_cstr fmt, t_size *i,
-		va_list lst)
+static void	ft_vprintf_stream_percent(t_stream *stream, const t_cstr fmt,
+		t_size *i, va_list lst)
 {
 	t_cstr		tmp;
 	t_string	tmp2;
 
 	(*i)++;
-	// get modifiers;
 	if (fmt[*i] == 's')
 	{
 		tmp = va_arg(lst, t_cstr);

@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 09:02:25 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/31 16:57:54 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/01/24 22:08:04 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef enum e_errno
 	ERRNO_BAD_FD = -1,
 	ERRNO_SYSTEM = -2,
 	ERRNO_NULL_BUFFER = -3,
+	ERRNO_NULL_CSTR = -3,
 	ERRNO_ZERO_CAPACITY = -4,
 	ERRNO_ALLOC_OVERSIZE = -5,
 	ERRNO_FILE_FLAGS_UNKNOWN = -6,

@@ -1,14 +1,17 @@
-include config/config.mk
+include config/libconfig.mk
 include config/colors.mk
 
-SRCS := system/calls/ft_read.c    \
-	system/calls/ft_open.c    \
-	system/calls/ft_exit.c    \
-	system/calls/ft_mmap.c    \
-	system/calls/ft_write.c   \
-	system/calls/ft_close.c   \
-	system/calls/ft_munmap.c  \
-	system/calls/ft_syscall.c
+SRCS := system/calls/ft_read.c     \
+	system/calls/ft_open.c     \
+	system/calls/ft_exit.c     \
+	system/calls/ft_mmap.c     \
+	system/calls/ft_write.c    \
+	system/calls/ft_close.c    \
+	system/calls/ft_fstat.c    \
+	system/calls/ft_munmap.c   \
+	system/calls/ft_syscall.c  \
+	system/calls/ft_newfstat.c \
+	system/calls/ft_newstatat.c
 SRCS += errno/ft_errno.c
 SRCS += allocators/arena/new.c           \
 	allocators/arena/free.c          \
@@ -55,6 +58,7 @@ SRCS += io/files/open.c \
 	io/files/read.c \
 	io/files/write.c \
 	io/files/close.c \
+	io/files/get_len.c \
 	io/files/to_stream.c
 SRCS += io/stream/end.c \
 	io/stream/read.c \
@@ -145,4 +149,8 @@ suprapack: all
 	@cp -r $(INCDIR) $(BUILDIDR)usr
 	@suprapack build $(BUILDIDR)usr
 
-.PHONY:all dynamic static re clean fclean install suprapack
+tests: static
+	@$(MAKE) -C tests all
+	@$(MAKE) --no-print-directory -C . fclean
+
+.PHONY:all dynamic static re clean fclean install suprapack tests

@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_threads.h                                       :+:      :+:    :+:   */
+/*   ft_stat_buffer.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 21:50:30 by tdelage           #+#    #+#             */
-/*   Updated: 2025/01/09 05:29:56 by tdelage          ###   ########.fr       */
+/*   Created: 2025/01/24 20:03:08 by tdelage           #+#    #+#             */
+/*   Updated: 2025/01/24 21:01:52 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_THREADS_H
-# define FT_THREADS_H
+#ifndef FT_STAT_BUFFER_H
+# define FT_STAT_BUFFER_H
 
+# include <system/utils/timespec_struct.h>
 # include <types.h>
 
-typedef int		t_thread_id;
-typedef t_any	(*t_thread_method)(t_any data);
+typedef struct s_stat
+{
+	t_u64		device;
+	t_u64		inode;
+	t_u32		mode;
+	t_size		link_number;
+	t_u32		uid;
+	t_u32		gid;
+	t_u64		rdevice;
+	t_size		size;
+	t_size		block_size;
+	t_size		block_number;
+	t_timespec	last_access;
+	t_timespec	last_modif;
+	t_timespec	last_status;
+}				t_stat;
 
-t_thread_id		thread_create(t_thread_method method, t_any data);
-
-#endif // FT_THREADS_H
+#endif // FT_STAT_BUFFER_H

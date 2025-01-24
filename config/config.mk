@@ -1,20 +1,10 @@
 AR = ar
 CC = clang
 LD = clang
-
-SRCSDIR = src/
-BUILDIDR = build/
-INCDIR = includes/
-OBJDIR = $(BUILDIDR)OBJ/
-DEPSDIR = $(BUILDIDR)DEPS/
+MAKE = make
 
 CFLAGS = -Iincludes -Wall -Wextra -fPIC
-DFLAGS = -MT $@ -MMD -MP -MF $(DEPSDIR)/$(patsubst %.c,%.d,$<)
-ARFLAGS = rcs
 LDFLAGS = -fPIE -nostdlib
-
-LIBROOT = /usr/lib/
-INCROOT = /usr/include/
 
 ifdef ERRORNORM
 	CFLAGS += -Werror
