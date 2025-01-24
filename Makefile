@@ -81,6 +81,10 @@ SRCS += strings/new.c \
 	strings/new_u_cstr.c \
 	strings/errno_to_cstr.c \
 	strings/new_with_capacity.c
+SRCS += assert/ft_assert.c \
+	assert/ft_cassert.c \
+	assert/ft_stream_assert.c \
+	assert/ft_stream_cassert.c
 OBJS := $(addprefix $(OBJDIR),$(SRCS:.c=.o))
 DEPS := $(addprefix $(DEPSDIR),$(SRCS:.c=.d))
 

@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_threads.h                                       :+:      :+:    :+:   */
+/*   ft_stream_assert.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 21:50:30 by tdelage           #+#    #+#             */
-/*   Updated: 2025/01/09 05:29:56 by tdelage          ###   ########.fr       */
+/*   Created: 2025/01/09 05:22:07 by tdelage           #+#    #+#             */
+/*   Updated: 2025/01/09 05:29:22 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_THREADS_H
-# define FT_THREADS_H
+#include <libft.h>
 
-# include <types.h>
-
-typedef int		t_thread_id;
-typedef t_any	(*t_thread_method)(t_any data);
-
-t_thread_id		thread_create(t_thread_method method, t_any data);
-
-#endif // FT_THREADS_H
+void	ft_stream_assert(bool condition, t_cstr message, t_stream *stream)
+{
+	ft_stream_cassert(condition, message, stream, 255);
+}
