@@ -6,14 +6,12 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 11:06:44 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/27 14:54:57 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/01/25 00:19:38 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef OPEN_MODE_H
 # define OPEN_MODE_H
-
-# include <fcntl.h>
 
 typedef enum e_open_mode
 {

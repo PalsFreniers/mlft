@@ -11,3 +11,7 @@ ARFLAGS = rcs
 
 LIBROOT = /usr/lib/
 INCROOT = /usr/include/
+
+ifndef NOT_COLORED
+	CFLAGS += -DCOLORED
+endif

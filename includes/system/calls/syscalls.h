@@ -6,14 +6,13 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 05:41:12 by tdelage           #+#    #+#             */
-/*   Updated: 2025/01/24 22:36:15 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/01/25 00:18:57 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SYSCALLS_H
 # define SYSCALLS_H
 
-# include <sys/cdefs.h>
 # include <types.h>
 
 // system calls utils

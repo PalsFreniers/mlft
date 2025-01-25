@@ -6,7 +6,7 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 22:01:50 by tdelage           #+#    #+#             */
-/*   Updated: 2025/01/24 22:29:18 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/01/25 01:10:13 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ void	ft_vprintf(t_stream *stream, const t_cstr fmt, va_list lst)
 		if (fmt[i] == '%')
 			ft_vprintf_stream_percent(stream, fmt, &i, lst);
 		else
-			stream_send_byte(stream, fmt[i]);
+			stream_send_byte(stream, fmt[i++]);
 	}
 }

@@ -1,7 +1,8 @@
 include config/libconfig.mk
 include config/colors.mk
 
-SRCS := system/calls/ft_read.c     \
+SRCS := start.c
+SRCS += system/calls/ft_read.c     \
 	system/calls/ft_open.c     \
 	system/calls/ft_exit.c     \
 	system/calls/ft_mmap.c     \
@@ -150,7 +151,11 @@ suprapack: all
 	@suprapack build $(BUILDIDR)usr
 
 tests: static
+ifdef SILENCED
+	@$(MAKE) -C tests all SILENCED=1
+else
 	@$(MAKE) -C tests all
+endif
 	@$(MAKE) --no-print-directory -C . fclean
 
 .PHONY:all dynamic static re clean fclean install suprapack tests

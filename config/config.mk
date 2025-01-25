@@ -3,7 +3,7 @@ CC = clang
 LD = clang
 MAKE = make
 
-CFLAGS = -Iincludes -Wall -Wextra -fPIC
+CFLAGS = -Iincludes -Wall -Wextra -nostdlibinc
 LDFLAGS = -fPIE -nostdlib
 
 ifdef ERRORNORM

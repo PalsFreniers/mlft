@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 08:52:06 by tdelage           #+#    #+#             */
-/*   Updated: 2025/01/24 22:21:44 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/01/25 00:51:38 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@
 # include <io/files.h>
 # include <io/streams.h>
 # include <memory.h>
-# include <string.h>
+# include <strings.h>
 # include <system/calls/syscalls.h>
 # include <types.h>
+# include <colors.h>
 
 #endif // LIBFT_H
 
