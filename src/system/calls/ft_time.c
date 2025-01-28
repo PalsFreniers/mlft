@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_numbers.h                                     :+:      :+:    :+:   */
+/*   ft_time.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 07:45:09 by tdelage           #+#    #+#             */
-/*   Updated: 2025/01/28 16:06:20 by tdelage          ###   ########.fr       */
+/*   Created: 2025/01/28 16:03:48 by tdelage           #+#    #+#             */
+/*   Updated: 2025/01/28 16:05:47 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CALL_NUMBERS_H
-# define CALL_NUMBERS_H
+#include <libft.h>
 
-typedef enum e_call_number
+t_i64	ft_time(t_i64 *time)
 {
-	SYS_READ = 0,
-	SYS_WRITE = 1,
-	SYS_OPEN = 2,
-	SYS_CLOSE = 3,
-	SYS_FSTAT = 5,
-	SYS_MMAP = 9,
-	SYS_MUNMAP = 11,
-	SYS_EXIT = 60,
-	SYS_TIME = 201,
-	SYS_NEWSTATAT = 262,
-}	t_call_number;
+	t_i64	ret;
 
-#endif // CALL_NUMBERS_H
+	ret = ft_syscall(SYS_TIME, time);
+	if (ret < 0)
+		return ((void)ft_errno(true, ERRNO_SYSTEM), -1);
+	return (ret);
+}

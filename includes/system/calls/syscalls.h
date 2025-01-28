@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 05:41:12 by tdelage           #+#    #+#             */
-/*   Updated: 2025/01/25 00:18:57 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/01/28 15:56:43 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void	ft_exit(t_exit_code exit_code) __attribute__((noreturn));
 bool	ft_newstatat(t_fd fd, t_cstr path, t_stat *buf,
 			t_newstatat_mode mode) __attribute__((warn_unused_result));
 bool	ft_newfstat(t_fd fd, t_stat *buf) __attribute__((warn_unused_result));
+t_i64	ft_time(t_i64 *time);
 
 #endif // SYSCALLS_H

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_numbers.h                                     :+:      :+:    :+:   */
+/*   ft_time.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 07:45:09 by tdelage           #+#    #+#             */
-/*   Updated: 2025/01/28 16:06:20 by tdelage          ###   ########.fr       */
+/*   Created: 2025/01/28 15:36:22 by tdelage           #+#    #+#             */
+/*   Updated: 2025/01/28 15:50:01 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CALL_NUMBERS_H
-# define CALL_NUMBERS_H
+#ifndef FT_TIME_H
+# define FT_TIME_H
 
-typedef enum e_call_number
+typedef struct s_time
 {
-	SYS_READ = 0,
-	SYS_WRITE = 1,
-	SYS_OPEN = 2,
-	SYS_CLOSE = 3,
-	SYS_FSTAT = 5,
-	SYS_MMAP = 9,
-	SYS_MUNMAP = 11,
-	SYS_EXIT = 60,
-	SYS_TIME = 201,
-	SYS_NEWSTATAT = 262,
-}	t_call_number;
+	int	seconds;
+	int	minutes;
+	int	hours;
+	int	year;
+	int	day;
+	int	month;
+}		t_time;
 
-#endif // CALL_NUMBERS_H
+t_time	time_get_local(void);
+
+#endif // FT_TIME_H

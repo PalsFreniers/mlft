@@ -6,6 +6,7 @@ SRCS += system/calls/ft_read.c     \
 	system/calls/ft_open.c     \
 	system/calls/ft_exit.c     \
 	system/calls/ft_mmap.c     \
+	system/calls/ft_time.c     \
 	system/calls/ft_write.c    \
 	system/calls/ft_close.c    \
 	system/calls/ft_fstat.c    \
@@ -90,6 +91,10 @@ SRCS += assert/ft_assert.c \
 	assert/ft_cassert.c \
 	assert/ft_stream_assert.c \
 	assert/ft_stream_cassert.c
+SRCS += time/get_local.c
+SRCS += logger/log.c \
+	logger/logger.c \
+	logger/loggerv.c
 OBJS := $(addprefix $(OBJDIR),$(SRCS:.c=.o))
 DEPS := $(addprefix $(DEPSDIR),$(SRCS:.c=.d))
 
