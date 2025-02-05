@@ -6,7 +6,7 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 14:54:45 by tdelage           #+#    #+#             */
-/*   Updated: 2025/01/24 22:26:34 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/02/05 19:24:18 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ t_size					stream_get_available_size(t_stream *stream);
 void					ft_printf(t_stream *stream, const t_cstr fmt, ...);
 void					ft_vprintf(t_stream *stream, const t_cstr fmt,
 							va_list lst);
+
+t_stream				stream_stdin(void);
+t_stream				stream_stdout(void);
+t_stream				stream_stderr(void);
 
 #endif // STREAMS_H

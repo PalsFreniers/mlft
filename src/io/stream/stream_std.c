@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_epoch.c                                        :+:      :+:    :+:   */
+/*   stream_std.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 19:02:32 by tdelage           #+#    #+#             */
-/*   Updated: 2025/02/05 19:19:28 by tdelage          ###   ########.fr       */
+/*   Created: 2025/02/05 19:24:39 by tdelage           #+#    #+#             */
+/*   Updated: 2025/02/05 19:26:32 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-t_u64	time_get_epoch(void)
+t_stream	stream_stdin(void)
 {
-	t_timeval	time;
+	static const t_file	stdin = STDIN;
 
-	ft_gettimeofday(&time);
-	return (time.secs);
+	return (file_to_stream((t_file *)&stdin));
+}
+
+t_stream	stream_stdout(void)
+{
+	static const t_file	stdout = STDOUT;
+
+	return (file_to_stream((t_file *)&stdout));
+}
+
+t_stream	stream_stderr(void)
+{
+	static const t_file	stderr = STDERR;
+
+	return (file_to_stream((t_file *)&stderr));
 }
