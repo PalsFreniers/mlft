@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_numbers.h                                     :+:      :+:    :+:   */
+/*   get_epoch.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 07:45:09 by tdelage           #+#    #+#             */
-/*   Updated: 2025/02/05 19:10:59 by tdelage          ###   ########.fr       */
+/*   Created: 2025/02/05 19:02:32 by tdelage           #+#    #+#             */
+/*   Updated: 2025/02/05 19:11:54 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CALL_NUMBERS_H
-# define CALL_NUMBERS_H
+#include <libft.h>
 
-typedef enum e_call_number
+t_u64	time_get_epoch(void)
 {
-	SYS_READ = 0,
-	SYS_WRITE = 1,
-	SYS_OPEN = 2,
-	SYS_CLOSE = 3,
-	SYS_FSTAT = 5,
-	SYS_MMAP = 9,
-	SYS_MUNMAP = 11,
-	SYS_EXIT = 60,
-	SYS_GETTIMEOFDAY = 96,
-	SYS_TIME = 201,
-	SYS_NEWSTATAT = 262,
-}	t_call_number;
+	t_timeval	time;
 
-#endif // CALL_NUMBERS_H
+	ft_gettimeofday(&time);
+	return (time.secs + (time.micro_secs * 1e3));
+}

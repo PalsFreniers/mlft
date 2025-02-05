@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   call_numbers.h                                     :+:      :+:    :+:   */
+/*   ft_gettimeofday.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/27 07:45:09 by tdelage           #+#    #+#             */
-/*   Updated: 2025/02/05 19:10:59 by tdelage          ###   ########.fr       */
+/*   Created: 2025/02/05 19:12:13 by tdelage           #+#    #+#             */
+/*   Updated: 2025/02/05 19:13:57 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CALL_NUMBERS_H
-# define CALL_NUMBERS_H
+#include <libft.h>
 
-typedef enum e_call_number
+void	ft_gettimeofday(t_timeval *tv)
 {
-	SYS_READ = 0,
-	SYS_WRITE = 1,
-	SYS_OPEN = 2,
-	SYS_CLOSE = 3,
-	SYS_FSTAT = 5,
-	SYS_MMAP = 9,
-	SYS_MUNMAP = 11,
-	SYS_EXIT = 60,
-	SYS_GETTIMEOFDAY = 96,
-	SYS_TIME = 201,
-	SYS_NEWSTATAT = 262,
-}	t_call_number;
-
-#endif // CALL_NUMBERS_H
+	if (tv == NULL)
+		return ((void)ft_errno(true, ERRNO_NULL_BUFFER));
+	if (ft_syscall(SYS_GETTIMEOFDAY, tv, NULL) < 0)
+		return ((void)ft_errno(true, ERRNO_SYSTEM));
+}

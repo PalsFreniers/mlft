@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 05:41:12 by tdelage           #+#    #+#             */
-/*   Updated: 2025/01/28 15:56:43 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/02/05 19:11:27 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ t_ptr	ft_mmap(t_mmap_params p, t_map_protection prot,
 			t_map_flags flags) __attribute__((warn_unused_result));
 void	ft_munmap(t_mmap_params p);
 void	ft_exit(t_exit_code exit_code) __attribute__((noreturn));
+void	ft_gettimeofday(t_timeval *tv);
 bool	ft_newstatat(t_fd fd, t_cstr path, t_stat *buf,
 			t_newstatat_mode mode) __attribute__((warn_unused_result));
 bool	ft_newfstat(t_fd fd, t_stat *buf) __attribute__((warn_unused_result));

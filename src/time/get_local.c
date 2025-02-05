@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:48:10 by tdelage           #+#    #+#             */
-/*   Updated: 2025/02/01 02:08:15 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/02/05 19:15:26 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ t_time	time_get_local(void)
 	t_i32	days;
 
 	days_in_month = (char [12]){31, 30, 31, 30, 31, 31, 30, 31, 30, 31, 31, 29};
-	time = ft_time(NULL);
+	time = time_get_epoch();
 	ft_bzero(&ret, sizeof(t_time));
 	days = get_secs(time, &ret);
 	get_days_cycle(days, &ret);

@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:36:22 by tdelage           #+#    #+#             */
-/*   Updated: 2025/02/01 01:47:21 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/02/05 19:15:39 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ typedef struct s_time
 }			t_time;
 
 t_time		time_get_local(void);
+t_u64		time_get_epoch(void);
 
 #endif // FT_TIME_H
