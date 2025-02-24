@@ -111,8 +111,10 @@ all: dynamic static
 -include $(DEPS)
 
 dynamic: $(SONAME)
+	@ln -s build/libft.so libft.so
 
 static: $(ANAME)
+	@ln -s build/libft.a libft.a
 
 $(OBJDIR)%.o: $(SRCSDIR)%.c
 	@norminette $< | grep "Error" > /dev/stderr | norminette $< > /dev/null
