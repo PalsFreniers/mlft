@@ -6,7 +6,7 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 20:59:06 by tdelage           #+#    #+#             */
-/*   Updated: 2025/02/05 19:08:23 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/04/26 04:08:05 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 typedef struct s_timespec
 {
-	t_u64	nano_secs;
 	t_u64	secs;
+	t_u64	nano_secs;
 }			t_timespec;
 
 typedef struct s_timeval
