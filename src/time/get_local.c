@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:48:10 by tdelage           #+#    #+#             */
-/*   Updated: 2025/02/05 19:43:24 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/04/26 04:19:07 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@ static t_i64	get_secs(t_i64 time, t_time *t)
 	return (ret);
 }
 
-// https://github.com/esmil/musl/blob/master/src/time/__secs_to_tm.c#L11
-// https://github.com/esmil/musl/blob/master/src/time/clock_gettime.c#L41
-
 static void	get_days_cycle(int days, t_time *ret)
 {
 	t_i32		qc;
@@ -57,11 +54,11 @@ static void	get_days_cycle(int days, t_time *ret)
 	if (q == 25)
 		q--;
 	ret->day -= q * (365 * 4 + 1);
-	ret->year = ret->day / 365 + 1900;
+	ret->year = ret->day / 365;
 	if (ret->year == 4)
 		ret->year--;
 	ret->day -= ret->year * 365;
-	ret->year += 4 * q + 100 * c + 400 * qc + 100;
+	ret->year += 4 * q + 100 * c + 400 * qc + 100 + 1900;
 }
 
 t_time	time_get_local(void)
@@ -81,13 +78,12 @@ t_time	time_get_local(void)
 		ret.day -= days_in_month[ret.month];
 		ret.month++;
 	}
-	ret.month += 2;
+	ret.month += 3;
 	if (ret.month >= 12)
 	{
 		ret.month -= 12;
 		ret.year++;
 	}
-	ret.month += 1;
 	ret.day += 1;
 	return (ret);
 }
