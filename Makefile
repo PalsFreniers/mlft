@@ -166,6 +166,5 @@ ifdef SILENCED
 else
 	@$(MAKE) -C tests all
 endif
-	@$(MAKE) --no-print-directory -C . fclean
 
 .PHONY:all dynamic static re clean fclean install suprapack tests
