@@ -111,10 +111,8 @@ all: dynamic static
 -include $(DEPS)
 
 dynamic: $(SONAME)
-	@ln -s build/libft.so libft.so
 
 static: $(ANAME)
-	@ln -s build/libft.a libft.a
 
 $(OBJDIR)%.o: $(SRCSDIR)%.c
 	@norminette $< | grep "Error" > /dev/stderr | norminette $< > /dev/null
@@ -161,6 +159,7 @@ suprapack: all
 	@suprapack build $(BUILDIDR)usr
 
 tests: static
+	@ln -s build/libft.a libft.a
 ifdef SILENCED
 	@$(MAKE) -C tests all SILENCED=1
 else
