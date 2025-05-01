@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 14:57:56 by tdelage           #+#    #+#             */
-/*   Updated: 2025/01/27 03:06:43 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/02 01:41:11 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ typedef int8_t		t_i8;
 typedef int16_t		t_i16;
 typedef int32_t		t_i32;
 typedef int64_t		t_i64;
+
+typedef float		t_f32;
+typedef double		t_f64;
+typedef long double	t_f128;
 
 typedef uintptr_t	t_uptr;
 typedef intptr_t	t_iptr;
