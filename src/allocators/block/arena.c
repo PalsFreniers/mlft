@@ -6,26 +6,27 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:08:45 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/30 12:09:02 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/02 01:34:39 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
 #include <allocators/block_allocator_utils.h>
+#include <libft.h>
 
 t_arena	*block_arena_static_storage(void)
 {
-	static t_arena	*heap = NULL;
+	static t_arena	*__static_mlft_heap = NULL;
 
-	if (heap == NULL)
+	if (__static_mlft_heap == NULL)
 	{
-		heap = arena_new(BLOCK_ALLOCATOR_BLOCKS_NUMBER);
-		if (heap->start == NULL)
+		__static_mlft_heap = arena_new(BLOCK_ALLOCATOR_BLOCKS_NUMBER);
+		if (__static_mlft_heap->start == NULL)
 			return (NULL);
-		((t_block_header *)heap->start)->free = true;
-		((t_block_header *)heap->start)->len = BLOCK_ALLOCATOR_BLOCKS_NUMBER
+		((t_block_header *)__static_mlft_heap->start)->free = true;
+		((t_block_header *)__static_mlft_heap->start)->len
+			= BLOCK_ALLOCATOR_BLOCKS_NUMBER
 			- sizeof(t_block_header);
-		((t_block_header *)heap->start)->next_init = false;
+		((t_block_header *)__static_mlft_heap->start)->next_init = false;
 	}
-	return (heap);
+	return (__static_mlft_heap);
 }
