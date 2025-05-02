@@ -98,6 +98,17 @@ SRCS += time/get_local.c \
 SRCS += logger/log.c \
 	logger/logger.c \
 	logger/loggerv.c
+SRCS += random/srand.c \
+	random/urand.c \
+	random/irand.c \
+	random/ft_rand.c \
+	random/ft_srand.c \
+	random/ft_urand.c \
+	random/ft_irand.c \
+	random/ft_surand.c \
+	random/ft_sirand.c \
+	random/get_unique.c \
+	random/get_default.c
 OBJS := $(addprefix $(OBJDIR),$(SRCS:.c=.o))
 DEPS := $(addprefix $(DEPSDIR),$(SRCS:.c=.d))
 

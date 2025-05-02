@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rand.c                                          :+:      :+:    :+:   */
+/*   ft_sirand.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 01:39:47 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/02 04:15:01 by tdelage          ###   ########.fr       */
+/*   Created: 2025/05/02 04:15:44 by tdelage           #+#    #+#             */
+/*   Updated: 2025/05/02 04:16:27 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libspec/libspec_random.h>
 
-t_u64	ft_rand(bool gen, t_seed seed)
+t_i64	ft_sirand(t_seed *seed, t_i64 a, t_i64 b)
 {
-	static t_seed	__static_mlft_seed = 123456;
+	t_i64	min;
+	t_i64	max;
 
-	if (!gen)
-		return (__static_mlft_seed = seed);
-	seed = RANDOM_MULT_VALUE * seed + 1;
-	return (seed);
+	min = a;
+	max = b;
+	if (a == b)
+		return (a);
+	if (a > b)
+	{
+		min = b;
+		max = a;
+	}
+	if (min < 0)
+		return (ft_surand(seed, 0, max - min) + min);
+	return (ft_surand(seed, min, max));
 }

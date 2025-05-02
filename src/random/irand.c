@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rand.c                                          :+:      :+:    :+:   */
+/*   irand.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/02 01:39:47 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/02 04:15:01 by tdelage          ###   ########.fr       */
+/*   Created: 2025/05/02 04:35:35 by tdelage           #+#    #+#             */
+/*   Updated: 2025/05/02 04:36:18 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <libspec/libspec_random.h>
 
-t_u64	ft_rand(bool gen, t_seed seed)
+t_i64	random_irand(t_random *rand, t_i64 a, t_i64 b)
 {
-	static t_seed	__static_mlft_seed = 123456;
-
-	if (!gen)
-		return (__static_mlft_seed = seed);
-	seed = RANDOM_MULT_VALUE * seed + 1;
-	return (seed);
+	return (rand->irand(rand->data, a, b));
 }

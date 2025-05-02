@@ -6,12 +6,14 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 01:40:40 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/02 01:40:49 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/02 02:38:42 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <libspec/libspec_random.h>
 
 void	ft_srand(t_seed seed)
 {
+	ft_rand(false, seed);
 }
