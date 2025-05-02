@@ -6,12 +6,12 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:40:40 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/30 12:41:11 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/02 02:29:54 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <allocators/block_allocator_utils.h>
+#include <libspec/libspec_block_allocator.h>
 
 t_block_header	*block_divide(t_block_header *header, t_size size)
 {

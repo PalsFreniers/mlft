@@ -6,11 +6,11 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 06:41:39 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/30 10:39:14 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/02 02:31:10 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <allocators/arena_allocator_utils.h>
+#include <libspec/libspec_arena_allocator.h>
 #include <libft.h>
 
 t_ptr	arena_malloc(t_size nb_elem, t_size elem_size, t_arena *arena)

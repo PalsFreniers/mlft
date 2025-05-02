@@ -6,11 +6,11 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 06:20:20 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/30 16:11:57 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/02 02:27:53 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <allocators/arena_allocator_utils.h>
+#include <libspec/libspec_arena_allocator.h>
 #include <libft.h>
 
 t_arena	*arena_new(t_size size)

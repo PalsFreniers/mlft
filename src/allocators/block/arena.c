@@ -6,11 +6,11 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 12:08:45 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/02 01:34:39 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/02 02:28:45 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <allocators/block_allocator_utils.h>
+#include <libspec/libspec_block_allocator.h>
 #include <libft.h>
 
 t_arena	*block_arena_static_storage(void)

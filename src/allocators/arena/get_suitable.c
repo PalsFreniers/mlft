@@ -6,11 +6,11 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 06:57:49 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/30 10:25:42 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/02 02:31:21 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <allocators/arena_allocator_utils.h>
+#include <libspec/libspec_arena_allocator.h>
 
 static bool	has_capacity(t_arena *arena, t_size size)
 {
