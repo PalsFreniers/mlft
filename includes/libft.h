@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 08:52:06 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/02 01:28:57 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/02 05:14:00 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <ft_ascii.h>
 # include <ft_assert.h>
 # include <ft_cstr.h>
+# include <ft_limits.h>
 # include <ft_time.h>
 # include <io/files.h>
 # include <io/streams.h>
