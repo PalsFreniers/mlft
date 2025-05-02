@@ -1,0 +1,5 @@
+#ifndef LIBSPEC_RANDOM_H
+#define LIBSPEC_RANDOM_H
+
+
+#endif // LIBSPEC_RANDOM_H

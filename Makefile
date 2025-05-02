@@ -153,9 +153,11 @@ install: all
 
 suprapack: all
 	@printf "$(MAGENTA)$(BOLD)[PKG] $(RESET)=> packing libft to suprapack package\n"
-	@mkdir -p $(BUILDIDR)usr/lib
-	@cp $(SONAME) $(ANAME) $(BUILDIDR)usr/lib
-	@cp -r $(INCDIR) $(BUILDIDR)usr
+	@mkdir -p $(BUILDIDR)/usr/lib
+	@cp $(SONAME) $(ANAME) $(BUILDIDR)/usr/lib
+	@cp -r $(INCDIR) $(BUILDIDR)/usr
+	@mv $(BUILDIR)/usr/$(INCDIR) $(BUILDIR)/include
+	@rm -fr $(BUILDIR)/usr/include/libspec
 	@suprapack build $(BUILDIDR)usr
 
 tests: static

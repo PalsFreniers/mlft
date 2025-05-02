@@ -17,6 +17,7 @@
 # include <stddef.h>
 
 // libft headers
+# include <allocators/allocators.h>
 # include <allocators/arena_allocator.h>
 # include <allocators/block_allocator.h>
 # include <colors.h>

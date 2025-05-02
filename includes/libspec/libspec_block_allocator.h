@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arena_allocator_utils.h                            :+:      :+:    :+:   */
+/*   block_allocator_utils.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 06:26:53 by tdelage           #+#    #+#             */
-/*   Updated: 2024/10/29 06:57:30 by tdelage          ###   ########.fr       */
+/*   Created: 2024/10/30 09:02:07 by tdelage           #+#    #+#             */
+/*   Updated: 2024/11/05 19:04:01 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARENA_ALLOCATOR_UTILS_H
-# define ARENA_ALLOCATOR_UTILS_H
+#ifndef LIBSPEC_BLOCK_ALLOCATOR_H
+# define LIBSPEC_BLOCK_ALLOCATOR_H
 
 # include <allocators/arena_allocator.h>
+# include <types.h>
 
-t_arena	arena_empty(void);
-t_arena	*arena_get_suitable(t_arena *first, t_size size);
+# define BLOCK_ALLOCATOR_BLOCKS_NUMBER 1000000
 
-#endif // ARENA_ALLOCATOR_UTILS_H
+typedef struct s_block_header
+{
+	t_size		len;
+	bool		free;
+	bool		next_init;
+}				t_block_header;
+
+t_block_header	*block_get_first_free(t_size size);
+t_arena			*block_arena_static_storage(void);
+t_block_header	*block_divide(t_block_header *header, t_size size);
+
+#endif // BLOCK_ALLOCATOR_UTILS_H
