@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   append.c                                           :+:      :+:    :+:   */
+/*   pop_back.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 18:59:56 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/15 00:06:53 by tdelage          ###   ########.fr       */
+/*   Created: 2025/05/15 00:08:54 by tdelage           #+#    #+#             */
+/*   Updated: 2025/05/15 00:12:28 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <strings_utils.h>
 
-void	string_append(t_string *str, t_string other)
+char	string_pop_back(t_string *str)
 {
 	if (str->unowned)
-		return ((void)string_errno(true, STRING_NO_MODIFY_UNOWNED));
-	while (str->capacity <= str->len + other.len && str->ptr != NULL)
-		string_resize(str);
-	if (str->ptr == NULL)
-		return ;
-	ft_memmove(str->ptr + str->len, other.ptr, other.len);
-	str->len += other.len;
+		return ((void)string_errno(true, STRING_NO_MODIFY_UNOWNED), -1);
+	if (str->len == 0)
+		return ((void)string_errno(true, STRING_EMPTY), -1);
+	return (str->ptr[--str->len]);
 }

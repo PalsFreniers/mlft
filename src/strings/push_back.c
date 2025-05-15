@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   append.c                                           :+:      :+:    :+:   */
+/*   push_back.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 18:59:56 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/15 00:06:53 by tdelage          ###   ########.fr       */
+/*   Created: 2025/05/15 00:08:54 by tdelage           #+#    #+#             */
+/*   Updated: 2025/05/15 00:09:18 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <strings_utils.h>
 
-void	string_append(t_string *str, t_string other)
+void	string_push_back(t_string *str, char c)
 {
 	if (str->unowned)
 		return ((void)string_errno(true, STRING_NO_MODIFY_UNOWNED));
-	while (str->capacity <= str->len + other.len && str->ptr != NULL)
+	if (str->capacity <= str->len + 1 && str->ptr != NULL)
 		string_resize(str);
 	if (str->ptr == NULL)
 		return ;
-	ft_memmove(str->ptr + str->len, other.ptr, other.len);
-	str->len += other.len;
+	str->ptr[str->len++] = c;
 }

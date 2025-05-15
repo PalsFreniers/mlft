@@ -6,7 +6,7 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:45:25 by tdelage           #+#    #+#             */
-/*   Updated: 2024/11/02 21:05:09 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/15 00:11:43 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef enum e_strng_error
 	STRING_ALLOC_ERROR,
 	STRING_NO_DESTROY_UNOWNED,
 	STRING_NO_MODIFY_UNOWNED,
+	STRING_EMPTY,
 	STRING_ITERATOR_INVALID,
 	STRING_ITERATOR_OVERFLOW,
 	STRING_ITERATOR_UNDERFLOW,
@@ -60,6 +61,10 @@ t_string			string_copy(t_string str);
 t_cstr				string_to_cstr(t_string str);
 
 void				string_append(t_string *str, t_string other);
+void				string_push(t_string *str, char c);
+void				string_push_back(t_string *str, char c);
+char				string_pop(t_string *str);
+char				string_pop_back(t_string *str);
 void				string_erase(t_string *str, t_size start, t_size len);
 t_isize				string_find(t_string str, t_string other);
 t_string			*string_split(t_allocator *alloc, t_string str,
