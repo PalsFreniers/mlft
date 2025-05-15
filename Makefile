@@ -72,6 +72,8 @@ SRCS += io/stream/end.c \
 	io/stream/stream_std.c \
 	io/stream/ft_vprintf.c
 SRCS += strings/new.c \
+	strings/pop.c \
+	strings/push.c \
 	strings/zero.c \
 	strings/copy.c \
 	strings/find.c \
@@ -84,7 +86,9 @@ SRCS += strings/new.c \
 	strings/resize.c \
 	strings/append.c \
 	strings/to_cstr.c \
+	strings/pop_back.c \
 	strings/new_cstr.c \
+	strings/push_back.c \
 	strings/size_equal.c \
 	strings/new_u_cstr.c \
 	strings/errno_to_cstr.c \
@@ -102,13 +106,23 @@ SRCS += random/srand.c \
 	random/urand.c \
 	random/irand.c \
 	random/ft_rand.c \
+	random/next_u8.c \
+	random/next_u16.c \
+	random/next_u32.c \
+	random/next_u64.c \
+	random/next_i8.c \
+	random/next_i16.c \
+	random/next_i32.c \
+	random/next_i64.c \
 	random/ft_srand.c \
 	random/ft_urand.c \
 	random/ft_irand.c \
 	random/ft_surand.c \
 	random/ft_sirand.c \
+	random/coin_flip.c \
 	random/get_unique.c \
-	random/get_default.c
+	random/get_default.c \
+	random/next_string.c
 OBJS := $(addprefix $(OBJDIR),$(SRCS:.c=.o))
 DEPS := $(addprefix $(DEPSDIR),$(SRCS:.c=.d))
 
