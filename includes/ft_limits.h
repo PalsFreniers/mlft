@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   limits.h                                           :+:      :+:    :+:   */
+/*   ft_limits.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 04:57:45 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/02 05:12:58 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/14 23:51:02 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIMITS_H
-# define LIMITS_H
+#ifndef FT_LIMITS_H
+# define FT_LIMITS_H
 
 # include <types.h>
 
@@ -42,4 +42,4 @@ t_u64	limit_umax_for(t_u64 bitlen);
 t_i64	limit_max_for(t_u8 bitlen);
 t_i64	limit_min_for(t_u8 bitlen);
 
-#endif // LIMITS_H
+#endif // FT_LIMITS_H
