@@ -6,12 +6,12 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 18:59:56 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/15 00:06:53 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/17 16:47:42 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <strings_utils.h>
+#include <libspec/libspec_string.h>
 
 void	string_append(t_string *str, t_string other)
 {

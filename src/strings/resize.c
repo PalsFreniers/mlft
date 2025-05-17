@@ -6,12 +6,12 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 18:54:32 by tdelage           #+#    #+#             */
-/*   Updated: 2024/11/02 18:59:22 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/17 16:45:08 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <strings_utils.h>
+#include <libspec/libspec_string.h>
 
 bool	string_resize(t_string *str)
 {

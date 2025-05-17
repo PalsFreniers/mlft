@@ -6,11 +6,10 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 17:31:18 by tdelage           #+#    #+#             */
-/*   Updated: 2024/11/02 17:52:38 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/17 16:50:20 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "strings.h"
 #include <libft.h>
 
 t_string	string_new_with_capacity(t_size capacity)

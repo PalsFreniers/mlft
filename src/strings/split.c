@@ -6,11 +6,10 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 21:01:26 by tdelage           #+#    #+#             */
-/*   Updated: 2024/11/02 21:41:38 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/17 16:46:52 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "strings.h"
 #include <libft.h>
 
 static t_size	string_split_get_word_count(t_string hay, t_string needle)

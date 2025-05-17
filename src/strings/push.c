@@ -6,12 +6,12 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 00:03:32 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/15 00:08:42 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/17 16:50:21 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <strings_utils.h>
+#include <libspec/libspec_string.h>
 
 void	string_push(t_string *str, char c)
 {

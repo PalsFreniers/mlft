@@ -6,11 +6,10 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 23:57:16 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/15 00:16:57 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/17 16:50:03 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "strings.h"
 #include <libft.h>
 
 t_string	random_next_string(t_random *rand, t_u64 len)

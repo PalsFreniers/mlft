@@ -6,12 +6,11 @@
 /*   By: tdelage <tdelage@student.42angouleme.fr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 00:08:54 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/15 00:12:28 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/17 16:48:56 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <strings_utils.h>
 
 char	string_pop_back(t_string *str)
 {
