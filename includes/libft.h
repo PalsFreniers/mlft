@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 08:52:06 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/02 05:14:00 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/20 23:12:17 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 # include <strings.h>
 # include <system/calls/syscalls.h>
 # include <types.h>
+# include <math/vectors.h>
 
 #endif // LIBFT_H
 

@@ -6,7 +6,7 @@
 /*   By: tdelage <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 04:57:45 by tdelage           #+#    #+#             */
-/*   Updated: 2025/05/14 23:51:02 by tdelage          ###   ########.fr       */
+/*   Updated: 2025/05/17 17:02:08 by tdelage          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 # define MIN_F64 2.225074e-308
 # define MIN_F128 3.362103e-4932L
 
-t_u64	limit_umax_for(t_u64 bitlen);
+t_u64	limit_umax_for(t_u8 bitlen);
 t_i64	limit_max_for(t_u8 bitlen);
 t_i64	limit_min_for(t_u8 bitlen);
 
